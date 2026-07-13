@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from core.plugin import PluginRegistry
-import agents.mock_agent  # Import to trigger registration
+import agents.mock_agent  # noqa: F401 — side-effect import triggers plugin registration
 from .database import engine, Base
 
 # Create tables

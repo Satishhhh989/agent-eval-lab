@@ -1,4 +1,3 @@
-import inspect
 from typing import Dict, Type, Any
 
 class PluginRegistry:

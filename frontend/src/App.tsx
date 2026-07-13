@@ -1,7 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Activity, LayoutDashboard, Settings, BrainCircuit } from 'lucide-react';
-import React from 'react';
 
 const queryClient = new QueryClient();
 
@@ -11,7 +10,7 @@ const Sidebar = () => (
       <BrainCircuit className="w-8 h-8 text-primary" />
       <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">AgentEval</span>
     </div>
-    
+
     <nav className="flex flex-col gap-2">
       <Link to="/" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors">
         <LayoutDashboard className="w-5 h-5 text-gray-400" />
@@ -39,7 +38,7 @@ const Dashboard = () => (
       <h1 className="text-3xl font-bold text-white mb-2">Agent Evaluation Laboratory</h1>
       <p className="text-gray-400">Monitor and scientifically compare autonomous AI agents.</p>
     </header>
-    
+
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 relative z-10">
       {[
         { title: 'Reasoning Score', value: '94.2%' },
@@ -52,7 +51,7 @@ const Dashboard = () => (
         </div>
       ))}
     </div>
-    
+
     <div className="glass-card p-6 min-h-[400px] relative z-10">
       <h3 className="text-xl font-semibold text-white mb-4">Live Benchmark Results</h3>
       <div className="flex items-center justify-center h-64 border border-dashed border-white/20 rounded-xl">
@@ -65,7 +64,7 @@ const Dashboard = () => (
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
+      <BrowserRouter>
         <div className="flex min-h-screen">
           <Sidebar />
           <main className="flex-1 ml-64 p-8">
@@ -76,7 +75,7 @@ function App() {
             </Routes>
           </main>
         </div>
-      </Router>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }

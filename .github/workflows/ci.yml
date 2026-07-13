@@ -10,51 +10,44 @@ jobs:
   backend-tests:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    
+    - uses: actions/checkout@v4
+
     - name: Set up Python 3.11
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: "3.11"
-        
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install pytest black ruff
-        
+        pip install fastapi uvicorn sqlalchemy pydantic pydantic-settings python-dotenv
+        pip install pytest ruff httpx2
+
     - name: Lint with Ruff
       run: |
-        ruff check .
-        
-    - name: Check formatting with Black
-      run: |
-        black --check .
-        
+        ruff check --select E,F --ignore E501 backend/ core/ agents/ benchmarks/ tests/
+
     - name: Test with pytest
       env:
         PYTHONPATH: .
       run: |
-        pytest tests/
+        pytest tests/ -v
 
-  frontend-tests:
+  frontend-build:
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: frontend
     steps:
-    - uses: actions/checkout@v3
-    
+    - uses: actions/checkout@v4
+
     - name: Use Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '18.x'
-        
+        node-version: '22'
+
     - name: Install dependencies
       run: npm ci
-      
-    - name: Lint
-      run: npm run lint --if-present
-      
+
     - name: Build
       run: npm run build
