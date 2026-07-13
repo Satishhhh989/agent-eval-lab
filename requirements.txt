@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+pydantic-settings
+alembic
+psycopg2-binary
+celery
+redis
+qdrant-client
+neo4j
+openai
+anthropic
+google-genai
+python-dotenv

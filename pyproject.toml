@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-eval-lab"
+version = "0.1.0"
+description = "Agent Evaluation Laboratory - A research platform for benchmarking autonomous AI agents."
+authors = [
+    {name = "Satish", email = "satish@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "sqlalchemy",
+    "pydantic",
+    "pydantic-settings",
+    "alembic",
+    "psycopg2-binary",
+    "celery",
+    "redis",
+    "qdrant-client",
+    "neo4j",
+    "openai",
+    "anthropic",
+    "google-genai",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+    "pytest-cov"
+]
