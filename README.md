@@ -12,10 +12,10 @@
 
 ---
 
-## 🎯 Project Motivation
+##  Project Motivation
 Most AI agent repositories demonstrate *what* agents can do. This repository **scientifically evaluates them**. The objective is to create an extensible benchmark suite that enables researchers to compare AI agents using reproducible experiments, testing reasoning, long-horizon planning, memory recall, tool efficiency, and hallucination rates.
 
-## 🏗️ Architecture
+##  Architecture
 
 Agent Eval Lab uses a decoupled, plugin-based enterprise architecture designed around Domain-Driven Design (DDD).
 
@@ -30,7 +30,7 @@ graph TD
     Agents --> LLM[LLM Providers API]
 ```
 
-## ✨ Feature Matrix
+##  Feature Matrix
 
 | Feature | Description | Status |
 | :--- | :--- | :--- |
@@ -40,7 +40,7 @@ graph TD
 | **Interactive Dashboard** | React-based dark-mode visualization of leaderboards. | 🟢 Active |
 | **Graph & Vector DBs** | Neo4j for planning tasks, Qdrant for memory validation. | 🟡 Planned |
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Installation
 
@@ -65,7 +65,7 @@ graph TD
    npm run dev
    ```
 
-## 📊 Benchmark Examples
+##  Benchmark Examples
 
 Here is a snippet showing how easy it is to run a benchmark using the Python SDK:
 
@@ -81,7 +81,7 @@ results = ExperimentEngine.run(agent, benchmark)
 print(f"Accuracy: {results.accuracy}, Cost: {results.cost_usd}")
 ```
 
-## 📸 Screenshots
+## Screenshots
 *(Coming soon)*
 
 ## 🗺️ Roadmap
@@ -91,10 +91,10 @@ print(f"Accuracy: {results.accuracy}, Cost: {results.cost_usd}")
 - [ ] Add Docker Compose configurations for Qdrant and Neo4j
 - [ ] Connect Live Dashboard to WebSocket telemetry
 
-## 🤝 Contributing
+##  Contributing
 We welcome contributions from researchers and engineers. Please read our `CONTRIBUTING.md` for details on our code of conduct and the process for submitting pull requests.
 
-## 📝 Citation
+## Citation
 If you use this platform in your research, please cite:
 ```bibtex
 @software{AgentEvalLab2026,
@@ -105,10 +105,10 @@ If you use this platform in your research, please cite:
 }
 ```
 
-## 📄 License
+##  License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgements
+##  Acknowledgements
 - Inspired by modern benchmark suites and frameworks.
 - Thanks to the open-source community for providing excellent tooling (FastAPI, React, TailwindCSS).
 
