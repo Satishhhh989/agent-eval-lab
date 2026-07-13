@@ -7,7 +7,7 @@ name = "agent-eval-lab"
 version = "0.1.0"
 description = "Agent Evaluation Laboratory - A research platform for benchmarking autonomous AI agents."
 authors = [
-    {name = "Satish", email = "satish@example.com"}
+    {name = "Satish", email = "satishchawan1818@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.11"
